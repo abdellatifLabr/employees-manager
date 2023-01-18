@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fc .fc-toolbar.fc-header-toolbar {
+  @apply mb-0 p-4;
+}
+
+.fc-button.fc-button-primary.fc-prev-button,
+.fc-button.fc-button-primary.fc-today-button,
+.fc-button.fc-button-primary.fc-next-button,
+.fc-button.fc-button-primary.fc-dayGridMonth-button,
+.fc-button.fc-button-primary.fc-dayGridWeek-button,
+.fc-button.fc-button-primary.fc-dayGridDay-button {
+  @apply bg-blue-500 text-white border-0 hover:bg-blue-600 transition-colors capitalize px-3 py-2;
+}
+
+#header {
+  -webkit-app-region: drag;
+  /* -webkit-user-select: none; */
+}
+
+#controls * {
+  -webkit-app-region: no-drag;
+}
+
+::-webkit-scrollbar {
+  @apply w-2 bg-transparent;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full drop-shadow-2xl;
+}
