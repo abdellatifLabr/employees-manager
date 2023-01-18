@@ -16,11 +16,11 @@ const UpdateWorkerPage = () => {
   useEffect(
     () =>
       setBreadcrumb([
-        { name: "Travailleurs", path: "/workers" },
+        { name: "Employees", path: "/workers" },
         {
           name: `${worker?.firstname ?? ""} ${worker?.lastname ?? ""}`,
         },
-        { name: "Modifier" },
+        { name: "Update" },
       ]),
     [worker]
   );

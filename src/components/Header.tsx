@@ -3,7 +3,7 @@ import { FaCalendarAlt, FaChevronRight, FaCog, FaUsers } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { BreadcrumbContext } from "src/contexts/BreadcrumbContext";
 import { WindowsControls } from "./WindowsControls";
-import logoUrl from "/assets/sonatrach-alt.svg";
+import logoUrl from "/assets/logo.svg";
 
 const Header = () => {
   const { breadcrumb } = useContext(BreadcrumbContext);
@@ -53,7 +53,7 @@ const Header = () => {
               className="hover:bg-gray-700 rounded px-3 py-2 font-medium cursor-pointer flex items-center space-x-3"
             >
               <FaCalendarAlt />
-              <span>Calendrier</span>
+              <span>Calender</span>
             </NavLink>
           </li>
           <li>
@@ -63,7 +63,7 @@ const Header = () => {
               className="hover:bg-gray-700 rounded px-3 py-2 font-medium cursor-pointer flex items-center space-x-3"
             >
               <FaUsers />
-              <span>Travailleurs</span>
+              <span>Employees</span>
             </NavLink>
           </li>
           <li>
@@ -73,7 +73,7 @@ const Header = () => {
               className="hover:bg-gray-700 rounded px-3 py-2 font-medium cursor-pointer flex items-center space-x-3"
             >
               <FaCog />
-              <span>Paramétres</span>
+              <span>Settings</span>
             </NavLink>
           </li>
         </ul>

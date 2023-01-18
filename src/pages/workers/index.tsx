@@ -6,10 +6,7 @@ import { BreadcrumbContext } from "src/contexts/BreadcrumbContext";
 const WorkersPage = () => {
   const { setBreadcrumb } = useContext(BreadcrumbContext);
 
-  useEffect(
-    () => setBreadcrumb([{ name: "Travailleurs", path: "/workers" }]),
-    []
-  );
+  useEffect(() => setBreadcrumb([{ name: "Employees", path: "/workers" }]), []);
 
   return (
     <div>

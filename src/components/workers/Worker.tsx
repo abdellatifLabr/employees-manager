@@ -52,11 +52,11 @@ const Worker: React.FC<{ worker: any; name: string; onRemove: () => void }> = ({
       <td className="px-6 py-4 whitespace-nowrap">
         {worker.status === "WORKING" ? (
           <span className="text-xs rounded-full bg-green-100 px-3 py-1 font-medium text-green-500">
-            En travail
+            Working
           </span>
         ) : (
           <span className="text-xs rounded-full bg-gray-100 px-3 py-1 font-medium text-gray-500">
-            Congé
+            On leave
           </span>
         )}
       </td>
@@ -86,7 +86,7 @@ const Worker: React.FC<{ worker: any; name: string; onRemove: () => void }> = ({
           </div>
         ) : (
           <span className="text-xs rounded-full bg-yellow-100 px-3 py-1 font-medium text-yellow-500">
-            Sans remplaçant
+            Without substitute
           </span>
         )}
       </td>
@@ -98,7 +98,7 @@ const Worker: React.FC<{ worker: any; name: string; onRemove: () => void }> = ({
             className="text-blue-400"
             onClick={() => history.push(`/workers/${worker.id}/edit`)}
           >
-            Modifier
+            Update
           </Button>
           <Button
             variant="light"
@@ -107,8 +107,8 @@ const Worker: React.FC<{ worker: any; name: string; onRemove: () => void }> = ({
             loading={isRemoveLoading}
             onClick={() =>
               dialog({
-                title: "Supression du travailleur",
-                message: "Voulez vous vraiment suprimer ce travailleur?",
+                title: "Delete remployee",
+                message: "Are you sure you want to delete this employee",
                 onAccept() {
                   removeWorker(worker.id, {
                     onSuccess() {
@@ -120,7 +120,7 @@ const Worker: React.FC<{ worker: any; name: string; onRemove: () => void }> = ({
               })
             }
           >
-            Suprimer
+            Delete
           </Button>
         </div>
       </td>
