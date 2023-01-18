@@ -12,10 +12,7 @@ const SettingsPage = () => {
   const { settings, updateSettings, isLoading } = useSettings();
   const { setBreadcrumb } = useContext(BreadcrumbContext);
 
-  useEffect(
-    () => setBreadcrumb([{ name: "Paramétes", path: "/settings" }]),
-    []
-  );
+  useEffect(() => setBreadcrumb([{ name: "Settings", path: "/settings" }]), []);
 
   return (
     <div className="h-full">
@@ -42,57 +39,7 @@ const SettingsPage = () => {
                   <span
                     className={cn("font-medium", { "text-blue-500": selected })}
                   >
-                    Paramétes générales
-                  </span>
-                </>
-              )}
-            </Tab>
-            <Tab
-              className={({ selected }) =>
-                cn(
-                  "flex items-center space-x-2 px-4 py-3 rounded hover:bg-gray-50",
-                  {
-                    "bg-gray-100": selected,
-                  }
-                )
-              }
-            >
-              {({ selected }) => (
-                <>
-                  <FaBell
-                    className={cn("text-gray-400", {
-                      "text-blue-500": selected,
-                    })}
-                  />
-                  <span
-                    className={cn("font-medium", { "text-blue-500": selected })}
-                  >
-                    Notifications
-                  </span>
-                </>
-              )}
-            </Tab>
-            <Tab
-              className={({ selected }) =>
-                cn(
-                  "flex items-center space-x-2 px-4 py-3 rounded hover:bg-gray-100",
-                  {
-                    "bg-gray-100": selected,
-                  }
-                )
-              }
-            >
-              {({ selected }) => (
-                <>
-                  <FaLock
-                    className={cn("text-gray-400", {
-                      "text-blue-500": selected,
-                    })}
-                  />
-                  <span
-                    className={cn("font-medium", { "text-blue-500": selected })}
-                  >
-                    Securité
+                    General
                   </span>
                 </>
               )}
@@ -144,7 +91,7 @@ const SettingsPage = () => {
                           value={values.BREAK_DURATION}
                         />
                         <Button type="submit" loading={isLoading}>
-                          Enregistrer
+                          Save
                         </Button>
                       </form>
                     )}

@@ -26,7 +26,7 @@ const WorkersTable = () => {
         <div>
           <Input
             type="text"
-            placeholder="Rechercher"
+            placeholder="Search"
             value={name}
             onChange={(e) => setName(e.currentTarget.value)}
             className="w-64"
@@ -35,7 +35,7 @@ const WorkersTable = () => {
         <div className="flex space-x-2">
           <Button onClick={() => history.push("/workers/create")}>
             <FaPlus className="text-sm text-white" aria-hidden="true" />
-            <span>Nouveau Travailleur</span>
+            <span>New employee</span>
           </Button>
         </div>
       </div>
@@ -46,31 +46,31 @@ const WorkersTable = () => {
               scope="col"
               className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
             >
-              Nom et prénom
+              Fullname
             </th>
             <th
               scope="col"
               className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
             >
-              Poste
+              Role
             </th>
             <th
               scope="col"
               className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
             >
-              Statut
+              Status
             </th>
             <th
               scope="col"
               className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
             >
-              prochaine date
+              Next date
             </th>
             <th
               scope="col"
               className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
             >
-              Remplaçant
+              Substitute
             </th>
             <th
               scope="col"
@@ -94,7 +94,7 @@ const WorkersTable = () => {
               <tr className="bg-white">
                 <td className="p-6" colSpan={6}>
                   <div className="flex items-center justify-center text-ms font-medium text-gray-600">
-                    <span>Pas de travailleurs ajouté</span>
+                    <span>No employees added yet</span>
                   </div>
                 </td>
               </tr>
@@ -123,7 +123,7 @@ const WorkersTable = () => {
         <div></div>
         <div className="flex space-x-4">
           <div className="flex items-center space-x-1 text-sm text-gray-600">
-            <span>Affichant</span>
+            <span>Showing</span>
             <Input
               type="number"
               value={perPage}
@@ -133,7 +133,7 @@ const WorkersTable = () => {
               className="w-16"
             />
             <span>
-              de <b>{count}</b> travailleurs
+              of <b>{count}</b> employees
             </span>
           </div>
           <div className="flex space-x-2">

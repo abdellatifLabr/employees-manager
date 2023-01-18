@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 import "@fullcalendar/react/dist/vdom";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import frLocale from "@fullcalendar/core/locales/fr";
 import { useAllWorkers } from "@hooks/workers/useAllWorkers";
 import { BreadcrumbContext } from "src/contexts/BreadcrumbContext";
 import { FaPlaneArrival, FaPlaneDeparture } from "react-icons/fa";
@@ -11,10 +10,7 @@ const CalendarPage = () => {
   const { data: { data: workers } = {} } = useAllWorkers();
   const { setBreadcrumb } = useContext(BreadcrumbContext);
 
-  useEffect(
-    () => setBreadcrumb([{ name: "Calendrier", path: "/calendar" }]),
-    []
-  );
+  useEffect(() => setBreadcrumb([{ name: "Calender", path: "/calendar" }]), []);
 
   return (
     <div className="bg-white">
@@ -22,7 +18,6 @@ const CalendarPage = () => {
         <FullCalendar
           plugins={[dayGridPlugin]}
           initialView="dayGridMonth"
-          locale={frLocale}
           headerToolbar={{
             start: "prev,next today",
             center: "title",

@@ -44,14 +44,14 @@ const WorkerForm: React.FC<{
           <div className="flex space-x-4">
             <div className="flex-1">
               <div className="text-xl font-medium mb-2 text-gray-400 pl-1">
-                Informations
+                Profile
               </div>
               <div className="bg-white border rounded-md p-4 pb-6">
                 <div className="flex space-x-2 mb-2">
                   <div className="flex-1">
                     <Input
                       type="text"
-                      label="Nom"
+                      label="Firstname"
                       name="firstname"
                       value={values.firstname}
                       onChange={handleChange}
@@ -64,7 +64,7 @@ const WorkerForm: React.FC<{
                       name="lastname"
                       value={values.lastname}
                       onChange={handleChange}
-                      label="Prénom"
+                      label="Lastname"
                       required
                     />
                   </div>
@@ -75,7 +75,7 @@ const WorkerForm: React.FC<{
                     name="role"
                     value={values.role}
                     onChange={handleChange}
-                    label="Poste"
+                    label="Role"
                     required
                   />
                 </div>
@@ -85,7 +85,7 @@ const WorkerForm: React.FC<{
                     name="phone"
                     value={values.phone}
                     onChange={handleChange}
-                    label="Numéro de télephone"
+                    label="Phone number"
                     required
                   />
                 </div>
@@ -99,7 +99,7 @@ const WorkerForm: React.FC<{
                         setFieldValue("replacementId", null);
                         handleChange(e);
                       }}
-                      label="Prochaine date"
+                      label="Next date"
                       required
                     />
                   </div>
@@ -108,32 +108,32 @@ const WorkerForm: React.FC<{
                       name="status"
                       value={values.status}
                       onChange={handleChange}
-                      label="Statut"
+                      label="Status"
                       required
                     >
-                      <option value="WORKING">En travail</option>
-                      <option value="BREAK">Congé</option>
+                      <option value="WORKING">Working</option>
+                      <option value="BREAK">On leave</option>
                     </Select>
                   </div>
                 </div>
               </div>
               <div className="flex space-x-2 justify-end mt-4">
                 <Button type="submit" loading={loading}>
-                  Enregistrer
+                  Save
                 </Button>
               </div>
             </div>
             <div className="flex-1">
               <div className="mb-2 px-1 flex justify-between items-center">
                 <span className="text-xl font-medium text-gray-400">
-                  Remplaçant
+                  Substitute
                 </span>
                 <div className="text-sm text-red-500">
                   <Link
                     to="#"
                     onClick={() => setFieldValue("replacementId", null)}
                   >
-                    Suprimer
+                    Delete
                   </Link>
                 </div>
               </div>
@@ -145,7 +145,7 @@ const WorkerForm: React.FC<{
                 ) : workers ? (
                   workers.length === 0 ? (
                     <div className="flex items-center justify-center text-ms font-medium text-gray-600 p-8">
-                      <span>Pas de travailleurs ajouté</span>
+                      <span>No employees added yet</span>
                     </div>
                   ) : (
                     <RadioGroup
@@ -212,11 +212,11 @@ const WorkerForm: React.FC<{
                                     <span>
                                       {replacement?.status === "WORKING" ? (
                                         <span className="text-xs rounded-full bg-green-100 px-3 py-1 font-medium text-green-500">
-                                          En travail
+                                          Working
                                         </span>
                                       ) : (
                                         <span className="text-xs rounded-full bg-gray-100 px-3 py-1 font-medium text-gray-500">
-                                          Congé
+                                          On leave
                                         </span>
                                       )}
                                     </span>
@@ -271,11 +271,11 @@ const WorkerForm: React.FC<{
                                     </span>
                                     {worker.status === "WORKING" ? (
                                       <span className="text-xs rounded-full bg-green-100 px-3 py-1 font-medium text-green-500">
-                                        En travail
+                                        Working
                                       </span>
                                     ) : (
                                       <span className="text-xs rounded-full bg-gray-100 px-3 py-1 font-medium text-gray-500">
-                                        Congé
+                                        On leave
                                       </span>
                                     )}
                                   </div>

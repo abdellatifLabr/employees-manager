@@ -13,8 +13,8 @@ const CreateWorkerPage = () => {
   useEffect(
     () =>
       setBreadcrumb([
-        { name: "Travailleurs", path: "/workers" },
-        { name: "Créer", path: "/workers/create" },
+        { name: "Employees", path: "/workers" },
+        { name: "Create", path: "/workers/create" },
       ]),
     []
   );
